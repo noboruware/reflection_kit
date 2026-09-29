@@ -24,6 +24,7 @@ flowchart LR
     M["monthly/YYYY-MM.md<br/>月次サマリ"]
     PR["profile/profile.md<br/>得意・課題（月次で更新）"]
 
+    I["inbox.md<br/>期中メモ（人が貼る）"] --> S1
     P --> S1
     S1["/weekly-reflection<br/>対話で作成"] --> W
     W --> S2["/monthly-summary"]
@@ -38,6 +39,14 @@ flowchart LR
 
 前提：Claude Code をこのディレクトリで起動する。
 
+### 期中：メモを貼る
+感じたこと・言われたこと（フィードバック）を、`inbox.md` に1行ずつ貼る。
+```
+- 2026-09-30 #fb 上司: 図があるとレビューが早い
+- 2026-10-01 #詰まり 変数管理票のルールが人によって違う
+```
+タグは任意（`#気づき` `#工夫` `#詰まり` `#うまくいった` `#fb`）。`#fb` は「他者の声」に転記される。
+
 ### 週初：目標を立てる
 ```
 /weekly-reflection 目標
@@ -48,7 +57,8 @@ flowchart LR
 ```
 /weekly-reflection 振り返り
 ```
-観点に沿って質問される。答えると `weeks/YYYY-Www.md` が更新される。
+`inbox.md` のメモを参照しながら、観点に沿って質問される（チャットに直接貼ってもよい）。
+記録の要約に「OK」と答えると `weeks/YYYY-Www.md` が更新され、取り込んだメモは inbox.md から消える。
 
 ### 月末：まとめる
 ```
@@ -67,6 +77,7 @@ reflection_kit/
 ├── .claude/skills/
 │   ├── weekly-reflection/SKILL.md
 │   └── monthly-summary/SKILL.md
+├── inbox.md                     # 期中メモ（人が貼る。取り込み後に消える）
 ├── config/perspectives.md       # 振り返りの観点（自分用に編集する）
 ├── weeks/                       # 週次ログ（_template.md を元に生成）
 ├── monthly/                     # 月次サマリ
@@ -88,6 +99,7 @@ reflection_kit/
 - **機密**：顧客名・個人名・数値は書かない。略称・案件コードにする。リポジトリは必ず private。
 - **事実と解釈を分ける**：スキルは Facts / Interpretation に分けて記録する（事実に根拠のない断定は書かせない）。
 - **AI は入力に依存する**：AI の要約は自分が入れた内容の範囲を出ない。1on1・顧客・チームからのフィードバックを「他者からの声」欄に入れて偏りを補正する。
+- **確定は人**：AI は書き込む前に要約を見せる。「OK」の返事で確定する。昇格（得意・課題への反映）も同様。
 - **人との対話は置き換えない**：1on1・メンター等の対話が主、これは記録と整理の補助。
 
 ## 今後（未実装）
