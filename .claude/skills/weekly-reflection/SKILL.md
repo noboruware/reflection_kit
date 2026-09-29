@@ -14,7 +14,7 @@ description: 週の目標設定または振り返りを、期中メモ（inbox.m
 2. `profile/profile.md` を読む（最近の得意・課題）
 3. `weeks/` の直近のファイルを読む（特に「来週への引き継ぎ」）
 4. `inbox.md` を読む（期中メモ）
-5. 今週のファイルが無ければ `weeks/_template.md` から `weeks/YYYY-Www.md` を作る（ISO週番号、日付範囲つき）
+5. 今週のファイルが無ければ、このスキルと同じフォルダの `template.md` から `weeks/YYYY-Www.md` を作る（ISO週番号、日付範囲つき）
 
 ## 期中メモの扱い
 

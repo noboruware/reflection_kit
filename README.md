@@ -75,11 +75,13 @@ reflection_kit/
 ├── README.md
 ├── CLAUDE.md                    # Claude Code への共通ルール
 ├── .claude/skills/
-│   ├── weekly-reflection/SKILL.md
+│   ├── weekly-reflection/
+│   │   ├── SKILL.md
+│   │   └── template.md          # 週次ファイルのテンプレート
 │   └── monthly-summary/SKILL.md
 ├── inbox.md                     # 期中メモ（人が貼る。取り込み後に消える）
 ├── config/perspectives.md       # 振り返りの観点（自分用に編集する）
-├── weeks/                       # 週次ログ（_template.md を元に生成）
+├── weeks/                       # 週次ログ（スキルの template.md を元に生成）
 ├── monthly/                     # 月次サマリ
 ├── profile/profile.md           # 得意・課題（月次更新、根拠つき）
 └── examples/                    # ダミーデータのサンプル
